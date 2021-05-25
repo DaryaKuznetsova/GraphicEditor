@@ -1,0 +1,28 @@
+﻿<group name="FlowChart">
+
+  <Item name="Diamond">
+    <line X1="0" X2="0.5" Y1="0.5" Y2="0"/>
+    <line X1="0.5" X2="1" Y1="0" Y2="0.5"/>
+    <line X1="1" X2="0.5" Y1="0.5" Y2="1"/>
+    <line X1="0.5" X2="0" Y1="1" Y2="0.5"/>
+  </Item>
+
+  <Item name="Process">
+    <line X1="0" X2="1" Y1="0" Y2="0"/>
+    <line X1="1" X2="1" Y1="0" Y2="1"/>
+    <line X1="1" X2="0" Y1="1" Y2="1"/>
+    <line X1="0" X2="0" Y1="1" Y2="0"/>
+    <line X1="0.2" X2="0.2" Y1="0" Y2="1"/>
+    <line X1="0.8" X2="0.8" Y1="0" Y2="1"/>
+  </Item>
+
+  <Connection name="Arrow">
+    <line X1="0.5" X2="0.5" Y1="0.1" Y2="1"/>
+    <line X1="0" X2="1" Y1="0.1" Y2="0.1"/>
+    <line X1="0" X2="0.5" Y1="0.1" Y2="0"/>
+    <line X1="0.5" X2="1" Y1="0" Y2="0.1"/>
+  </Connection>
+
+</group>
+
+

@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="DiagramDesigner.Models.Connection">
+    <Position X="2" Y="0.5" Width="1.5" />
+    <Members>
+      <Method Name="OnPropertyChanged" Hidden="true" />
+      <Event Name="PropertyChanged" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAQAAAIAABAAAAgAAAAAAAAEAAAAIAAAg=</HashCode>
+      <FileName>Connection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DiagramDesigner.Models.Diagram">
+    <Position X="5.75" Y="2.75" Width="2" />
+    <Members>
+      <Method Name="OnPropertyChanged" Hidden="true" />
+      <Event Name="PropertyChanged" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAAAAIAAAAEAgiAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Diagram.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DiagramDesigner.Models.Item">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <Members>
+      <Method Name="OnPropertyChanged" Hidden="true" />
+      <Event Name="PropertyChanged" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAACAMBAhAAAAAAAIAAAAEAAgAAAAAABAAAACAEAYAA=</HashCode>
+      <FileName>Item.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DiagramDesigner.Models.Group">
+    <Position X="2" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Group.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="DataAccesLayer.IFileAccessService">
+    <Position X="5.75" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAEAAAAgAAAAAAAACAAAAAAAAAAAAAACAAABAA=</HashCode>
+      <FileName>IFileAccessService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

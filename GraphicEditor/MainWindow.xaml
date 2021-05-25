@@ -1,0 +1,134 @@
+﻿<Window x:Class="GraphicEditor.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GraphicEditor" xmlns:local1="clr-namespace:GraphicEditor.UserControls"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="446.739" Width="865.218">
+
+    <Window.InputBindings>
+        <KeyBinding Key="Del"
+                    Command="{Binding DeleteSelectedItemsCommand}" />
+    </Window.InputBindings>
+
+
+    <DockPanel Margin="0">
+        <ToolBar Height="35" DockPanel.Dock="Top">
+            <Button ToolTip="New"
+                    Content="New"
+                    Margin="8,0,3,0"
+                    Command="{Binding CreateNewDiagramCommand}"/>
+            <Button ToolTip="Save"
+                    Content="Save"
+                    Margin="8,0,3,0"
+                    Command="{Binding SaveDiagramCommand}" />
+
+            <Label Margin="30,0,3,0"
+                   VerticalAlignment="Center"
+                   Content="Saved Diagrams" />
+            <ComboBox Margin="8,0,3,0"
+                     Width="200"
+                     ToolTip="Saved Diagrams"
+                     IsSynchronizedWithCurrentItem="True"
+                     ItemsSource="{Binding SavedDiagramsCV}"/>
+            <Button ToolTip="Load Selected Diagram"
+                    Content="Load"
+                    Margin="8,0,3,0"
+                    Command="{Binding LoadDiagramCommand}" />
+            <!--<ProgressBar Margin="8,0,3,0"
+                         Visibility="{Binding Path=IsBusy, 
+                Converter={x:Static s:BoolToVisibilityConverter.Instance}}"
+                         IsIndeterminate="True"
+                         Width="150"
+                         Height="20"
+                         VerticalAlignment="Center" />-->
+        </ToolBar>
+
+        <Grid Margin="0,5,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="230" />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <!-- ToolBox Control -->
+            <local1:ToolBoxControl Grid.Column="0"
+                                  DataContext="{Binding ToolBoxViewModel}" />
+
+            <GridSplitter Grid.Column="1"
+                          HorizontalAlignment="Left"
+                          VerticalAlignment="Stretch"
+                          Background="Transparent"
+                          Width="3" />
+
+            <!-- Diagram Control --><!--
+            <s:DiagramControl Grid.Column="1"
+                                  DataContext="{Binding DiagramViewModel}"
+                                  Margin="3,1,0,0" />-->
+        </Grid>
+    </DockPanel>
+
+    <!--<Grid>
+        <Menu Height="20" VerticalAlignment="Top">
+            <MenuItem Header="Файл">
+                <MenuItem Header="Новая схема" ></MenuItem>
+                <MenuItem Header="Открыть" ></MenuItem>
+                <Separator />
+                <MenuItem Header="Сохранить" ></MenuItem>
+                <MenuItem Header="Сохранить как..." ></MenuItem>
+                <Separator />
+                <MenuItem Header="Выход" ></MenuItem>
+            </MenuItem>
+        </Menu>
+
+        <GroupBox Header="Группы" HorizontalAlignment="Left" Height="400" Margin="0,20,0,0" VerticalAlignment="Top" Width="160">
+            <StackPanel >
+                <Expander Header="Блок-схема" HorizontalAlignment="Left" Height="161" VerticalAlignment="Top" Width="150" Margin="0,0,-2,0">
+                    <Grid Background="#FFE5E5E5">
+                        <StackPanel>
+
+                        </StackPanel>
+                    </Grid>
+                </Expander>
+                <Expander Header="UML" HorizontalAlignment="Left" Height="215" VerticalAlignment="Top" Width="150" Margin="0,0,-2,0">
+                    <Grid Background="#FFE5E5E5">
+                        <StackPanel>
+
+                        </StackPanel>
+                    </Grid>
+                </Expander>
+            </StackPanel>
+        </GroupBox>
+        <Canvas HorizontalAlignment="Left" Height="385" Margin="165,25,0,0" VerticalAlignment="Top" Width="442">
+
+        </Canvas>
+        <GroupBox Header="Свойства" HorizontalAlignment="Left" Height="395" Margin="612,25,0,-3.2" VerticalAlignment="Top" Width="251">
+            <Grid ShowGridLines="False">
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition  Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition  Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition  Width="Auto"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.Column="0" Grid.Row="0" Content="Размер          "  />
+                <TextBox Grid.Column="1" Grid.Row="0" Text="         100" Height="20"/>
+                <TextBox Grid.Column="2" Grid.Row="0" Text="         200" Height="20"/>
+                <Label Grid.Column="0" Grid.Row="1" Content="Цвет"  />
+                <TextBox Grid.Column="1" Grid.Row="1" Height="20" />
+
+            </Grid>
+        </GroupBox>
+    </Grid>-->
+</Window>

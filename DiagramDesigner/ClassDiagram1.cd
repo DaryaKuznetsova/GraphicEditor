@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="DiagramDesigner.Models.Connection">
+    <Position X="9.25" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAQAAAIAABAAAAgAAAAAAAAEAAAAIAAAg=</HashCode>
+      <FileName>Models\Connection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DiagramDesigner.Models.Diagram" Collapsed="true">
+    <Position X="9" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAAAAIAAAAEAgiAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Diagram.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DiagramDesigner.Models.Group" Collapsed="true">
+    <Position X="11.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Group.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DiagramDesigner.Models.Item">
+    <Position X="10.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAMBAhAAAAAAAIAAAAEAAgAAAAAABAAAACAEAYAA=</HashCode>
+      <FileName>Models\Item.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DiagramDesigner.ViewModels.ConnectionViewModel">
+    <Position X="5.5" Y="7.25" Width="2.5" />
+    <Members>
+      <Method Name="ConnectorViewModel_PropertyChanged" Hidden="true" />
+      <Method Name="UpdateArea" Hidden="true" />
+      <Method Name="UpdateConnectionPoints" Hidden="true" />
+    </Members>
+    <InheritanceLine Type="DiagramDesigner.ViewModels.SelectedItemViewModel" ManuallyRouted="true">
+      <Path>
+        <Point X="3" Y="7.636" />
+        <Point X="3" Y="8.002" />
+        <Point X="4.873" Y="8.002" />
+        <Point X="4.873" Y="7.058" />
+        <Point X="6.75" Y="7.058" />
+        <Point X="6.75" Y="7.25" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAGAAAAAAAAAAAAACAABAAAQCAACAAA=</HashCode>
+      <FileName>ViewModels\ConnectionViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DiagramDesigner.ViewModels.DiagramViewModel">
+    <Position X="5" Y="0.75" Width="3" />
+    <Members>
+      <Property Name="SelectedItems" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>BAgAAICBBBgACAgAAAgAgEAgCAAAAJAEAIAAAACUAAA=</HashCode>
+      <FileName>ViewModels\DiagramViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="DiagramDesigner.ViewModels.INPCBase">
+    <Position X="3" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAAABAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\INPCBase.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="DiagramDesigner.ViewModels.SelectedItemViewModel">
+    <Position X="1.25" Y="3" Width="3.5" />
+    <Members>
+      <Method Name="Init" Hidden="true" />
+      <Property Name="Parent" Hidden="true" />
+      <Property Name="SelectedItems" Hidden="true" />
+      <Method Name="SelectItem" Hidden="true" />
+    </Members>
+    <InheritanceLine Type="DiagramDesigner.ViewModels.INPCBase" ManuallyRouted="true">
+      <Path>
+        <Point X="3.75" Y="2.497" />
+        <Point X="3.75" Y="2.812" />
+        <Point X="2.917" Y="2.812" />
+        <Point X="2.917" Y="3" />
+        <Point X="3" Y="3" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAGAAARABkAEAAAAAAAQAECBAIAABgAAAYCAAAAAAA=</HashCode>
+      <FileName>ViewModels\SelectedItemViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="DiagramDesigner.ViewModels.SimpleCommand" BaseTypeListCollapsed="true">
+    <Position X="11" Y="1.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAAQAEEAAAAAAAAAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>ViewModels\SimpleCommand.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Interface Name="DiagramDesigner.ViewModels.IDiagramViewModel">
+    <Position X="9.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAIAAAAgACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\IDiagramViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="DiagramDesigner.ViewModels.ISelectItems">
+    <Position X="0.75" Y="1.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\SelectedItemViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
