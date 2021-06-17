@@ -1,14 +1,13 @@
-﻿using GraphicEditor.Contracts;
-using GraphicEditor.Services.Contracts;
-using GraphicEditor.Services.Implementation;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using DataAccesLayer;
+using Persistence.Common;
 
-namespace GraphicEditor.Services
+namespace DemoApp
 {
+
     /// <summary>
     /// Simple service interface
     /// </summary>
@@ -16,7 +15,7 @@ namespace GraphicEditor.Services
     {
         IUIVisualizerService VisualizerService { get; }
         IMessageBoxService MessageBoxService { get; }
-     //   IDatabaseAccessService DatabaseAccessService { get; }
+        IFileAccessService DatabaseAccessService { get; }
     }
 
 
@@ -27,7 +26,7 @@ namespace GraphicEditor.Services
     {
         private IUIVisualizerService visualizerService = new WPFUIVisualizerService();
         private IMessageBoxService messageBoxService = new WPFMessageBoxService();
-    //    private IDatabaseAccessService databaseAccessService = new DatabaseAccessService();
+        private IFileAccessService databaseAccessService = new FileAccessService();
 
         public IUIVisualizerService VisualizerService
         {
@@ -39,10 +38,10 @@ namespace GraphicEditor.Services
             get { return messageBoxService; }
         }
 
-        //public IDatabaseAccessService DatabaseAccessService
-        //{
-        //    get { return databaseAccessService; }
-        //}
+        public IFileAccessService DatabaseAccessService
+        {
+            get { return databaseAccessService; }
+       }
 
     }
 
@@ -78,7 +77,7 @@ namespace GraphicEditor.Services
 
         public static ApplicationServicesProvider Instance
         {
-            get { return instance.Value; }
+            get { return instance.Value;  }
         }
     }
 }

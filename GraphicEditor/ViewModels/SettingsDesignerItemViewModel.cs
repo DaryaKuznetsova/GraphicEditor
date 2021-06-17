@@ -1,16 +1,14 @@
-﻿using DiagramDesigner;
-using GraphicEditor.Contracts;
-using GraphicEditor.Services;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using DiagramDesigner;
 using System.Windows.Input;
 
-namespace GraphicEditor.ViewModels
+
+namespace DemoApp
 {
-    class SettingsDesignerItemViewModel: DesignerItemViewModelBase, ISupportDataChanges
+    public class SettingsDesignerItemViewModel : DesignerItemViewModelBase, ISupportDataChanges
     {
         private IUIVisualizerService visualiserService;
 

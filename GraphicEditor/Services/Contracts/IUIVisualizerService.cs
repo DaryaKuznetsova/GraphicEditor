@@ -2,10 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
-namespace GraphicEditor.Contracts
+namespace DemoApp
 {
+    /// <summary>
+    /// This interface defines a UI controller which can be used to display dialogs
+    /// in either modal form from a ViewModel.
+    /// </summary>
     public interface IUIVisualizerService
     {
         /// <summary>

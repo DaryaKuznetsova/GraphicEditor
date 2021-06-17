@@ -1,16 +1,14 @@
-﻿using GraphicEditor.Contracts;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 
-namespace GraphicEditor.Services.Implementation
+namespace DemoApp
 {
-    class WPFUIVisualizerService:  IUIVisualizerService
+    public class WPFUIVisualizerService : IUIVisualizerService
     {
-
+ 
         #region Public Methods
         /// <summary>
         /// This method displays a modal dialog associated with the given key.
@@ -19,14 +17,16 @@ namespace GraphicEditor.Services.Implementation
         /// <returns>True/False if UI is displayed.</returns>
         public bool? ShowDialog(object dataContextForPopup)
         {
-            //Window win = new PopupWindow();
-            //win.DataContext = dataContextForPopup;
-            //win.Owner = Application.Current.MainWindow;
-            //if (win != null)
-            //    return win.ShowDialog();
+            Window win = new PopupWindow();
+            win.DataContext = dataContextForPopup;
+            win.Owner = Application.Current.MainWindow;
+            if (win != null)
+                return win.ShowDialog();
 
             return false;
         }
         #endregion
+
+      
     }
 }

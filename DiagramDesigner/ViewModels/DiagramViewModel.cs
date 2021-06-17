@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace DiagramDesigner.ViewModels
 {
-    class DiagramViewModel : INPCBase, IDiagramViewModel
+    public class DiagramViewModel : INPCBase, IDiagramViewModel
     {
-        private ObservableCollection<SelectedItemViewModel> items = new ObservableCollection<SelectedItemViewModel>();
+        private ObservableCollection<SelectedItemViewModelBase> items = new ObservableCollection<SelectedItemViewModelBase>();
 
         public DiagramViewModel()
         {
@@ -25,12 +25,12 @@ namespace DiagramDesigner.ViewModels
         public SimpleCommand CreateNewDiagramCommand { get; private set; }
         public SimpleCommand SaveDiagramCommand { get; private set; }
 
-        public ObservableCollection<SelectedItemViewModel> Items
+        public ObservableCollection<SelectedItemViewModelBase> Items
         {
             get { return items; }
         }
 
-        public List<SelectedItemViewModel> SelectedItems
+        public List<SelectedItemViewModelBase> SelectedItems
         {
             get { return Items.Where(x => x.IsSelected).ToList(); }
         }
@@ -99,11 +99,13 @@ namespace DiagramDesigner.ViewModels
             }
         }
 
+        public SimpleCommand ClearSelectedItemsCommand => throw new NotImplementedException();
+
         private void ExecuteAddItemCommand(object parameter)
         {
-            if (parameter is SelectedItemViewModel)
+            if (parameter is SelectedItemViewModelBase)
             {
-                SelectedItemViewModel item = (SelectedItemViewModel)parameter;
+                SelectedItemViewModelBase item = (SelectedItemViewModelBase)parameter;
                 item.Parent = this;
                 items.Add(item);
             }
@@ -111,9 +113,9 @@ namespace DiagramDesigner.ViewModels
 
         private void ExecuteRemoveItemCommand(object parameter)
         {
-            if (parameter is SelectedItemViewModel)
+            if (parameter is SelectedItemViewModelBase)
             {
-                SelectedItemViewModel item = (SelectedItemViewModel)parameter;
+                SelectedItemViewModelBase item = (SelectedItemViewModelBase)parameter;
                 items.Remove(item);
             }
         }

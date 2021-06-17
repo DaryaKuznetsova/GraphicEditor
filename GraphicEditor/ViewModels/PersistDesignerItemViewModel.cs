@@ -1,20 +1,17 @@
-﻿using DiagramDesigner;
-using GraphicEditor.Contracts;
-using GraphicEditor.Services;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using DiagramDesigner;
 using System.Windows.Input;
 
-namespace GraphicEditor.ViewModels
+namespace DemoApp
 {
-    class PersistDesignerItemViewModel : DesignerItemViewModelBase, ISupportDataChanges
+    public class PersistDesignerItemViewModel : DesignerItemViewModelBase, ISupportDataChanges
     {
         private IUIVisualizerService visualiserService;
 
-        public PersistDesignerItemViewModel(int id, IDiagramViewModel parent, double left, double top, string hostUrl) : base(id, parent, left, top)
+        public PersistDesignerItemViewModel(int id, IDiagramViewModel parent, double left, double top, string hostUrl) : base(id,parent, left,top)
         {
             this.HostUrl = hostUrl;
             Init();

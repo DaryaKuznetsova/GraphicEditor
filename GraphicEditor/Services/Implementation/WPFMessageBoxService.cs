@@ -1,14 +1,15 @@
-﻿using GraphicEditor.Services.Contracts;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 
-namespace GraphicEditor.Services.Implementation
+
+
+namespace DemoApp
 {
-    class WPFMessageBoxService: IMessageBoxService
+    /// <summary>
+    /// This class implements the IMessageBoxService for WPF purposes.
+    /// </summary>
+    public class WPFMessageBoxService : IMessageBoxService
     {
         #region IMessageBoxService Members
 
@@ -385,5 +386,6 @@ namespace GraphicEditor.Services.Implementation
             return customDialogResults;
         }
         #endregion
+
     }
 }

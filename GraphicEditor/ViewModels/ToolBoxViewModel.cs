@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Collections.ObjectModel;
 using DiagramDesigner.Helpers;
+using DiagramDesigner;
 
-namespace GraphicEditor.ViewModels
+namespace DemoApp
 {
-    class ToolBoxViewModel
+    public class ToolBoxViewModel
     {
-
         private List<ToolBoxData> toolBoxItems = new List<ToolBoxData>();
 
         public ToolBoxViewModel()

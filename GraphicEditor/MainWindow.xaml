@@ -1,48 +1,54 @@
-﻿<Window x:Class="GraphicEditor.MainWindow"
+﻿<Window x:Class="DemoApp.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:GraphicEditor" xmlns:local1="clr-namespace:GraphicEditor.UserControls"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="446.739" Width="865.218">
+        xmlns:s="clr-namespace:DiagramDesigner;assembly=DiagramDesigner"
+        xmlns:local="clr-namespace:DemoApp"
+        WindowState="Maximized"
+        SnapsToDevicePixels="True"
+		Title="Diagram Designer"        
+		Height="850" Width="1100">
 
     <Window.InputBindings>
         <KeyBinding Key="Del"
                     Command="{Binding DeleteSelectedItemsCommand}" />
     </Window.InputBindings>
 
-
     <DockPanel Margin="0">
         <ToolBar Height="35" DockPanel.Dock="Top">
             <Button ToolTip="New"
                     Content="New"
-                    Margin="8,0,3,0"
+					Margin="8,0,3,0"
                     Command="{Binding CreateNewDiagramCommand}"/>
             <Button ToolTip="Save"
                     Content="Save"
                     Margin="8,0,3,0"
                     Command="{Binding SaveDiagramCommand}" />
-
+            <Button ToolTip="Ungroup/Group"
+                    Content="Ungroup/Group"
+                    Margin="8,0,3,0"
+                    Command="{Binding GroupCommand}" />
             <Label Margin="30,0,3,0"
                    VerticalAlignment="Center"
                    Content="Saved Diagrams" />
             <ComboBox Margin="8,0,3,0"
                      Width="200"
                      ToolTip="Saved Diagrams"
-                     IsSynchronizedWithCurrentItem="True"
-                     ItemsSource="{Binding SavedDiagramsCV}"/>
+                      SelectedItem="{Binding SavedDiagramId}"
+                     ItemsSource="{Binding SavedDiagrams}"/>
             <Button ToolTip="Load Selected Diagram"
                     Content="Load"
                     Margin="8,0,3,0"
                     Command="{Binding LoadDiagramCommand}" />
-            <!--<ProgressBar Margin="8,0,3,0"
-                         Visibility="{Binding Path=IsBusy, 
-                Converter={x:Static s:BoolToVisibilityConverter.Instance}}"
+            <ProgressBar Margin="8,0,3,0"
+                         Visibility="{Binding Path=IsBusy, Converter={x:Static s:BoolToVisibilityConverter.Instance}}"
                          IsIndeterminate="True"
                          Width="150"
                          Height="20"
-                         VerticalAlignment="Center" />-->
+                         VerticalAlignment="Center" />
+
+
         </ToolBar>
 
         <Grid Margin="0,5,0,0">
@@ -52,21 +58,23 @@
             </Grid.ColumnDefinitions>
 
             <!-- ToolBox Control -->
-            <local1:ToolBoxControl Grid.Column="0"
-                                  DataContext="{Binding ToolBoxViewModel}" />
+            <!--<local:ToolBoxControl Grid.Column="0"
+                                  DataContext="{Binding ToolBoxViewModel}" />-->
 
             <GridSplitter Grid.Column="1"
-                          HorizontalAlignment="Left"
-                          VerticalAlignment="Stretch"
-                          Background="Transparent"
-                          Width="3" />
+						  HorizontalAlignment="Left"
+						  VerticalAlignment="Stretch"
+						  Background="Transparent"
+						  Width="3" />
 
-            <!-- Diagram Control --><!--
-            <s:DiagramControl Grid.Column="1"
+            <!-- Diagram Control -->
+            <!--<s:DiagramControl Grid.Column="1"
                                   DataContext="{Binding DiagramViewModel}"
                                   Margin="3,1,0,0" />-->
         </Grid>
     </DockPanel>
+
+
 
     <!--<Grid>
         <Menu Height="20" VerticalAlignment="Top">

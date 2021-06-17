@@ -11,7 +11,9 @@ namespace DiagramDesigner.ViewModels
     {
         SimpleCommand AddItemCommand { get; }
         SimpleCommand RemoveItemCommand { get; }
-        List<SelectedItemViewModel> SelectedItems { get; }
-        ObservableCollection<SelectedItemViewModel> Items { get; }
+        List<SelectedItemViewModelBase> SelectedItems { get; }
+        ObservableCollection<SelectedItemViewModelBase> Items { get; }
+
+        SimpleCommand ClearSelectedItemsCommand { get; }
     }
 }

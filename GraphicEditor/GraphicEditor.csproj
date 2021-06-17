@@ -8,12 +8,13 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>GraphicEditor</RootNamespace>
     <AssemblyName>GraphicEditor</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -35,11 +36,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DataAccesLayer">
+    <Reference Include="DataAccesLayer, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\DataAccesLayer\bin\Debug\DataAccesLayer.dll</HintPath>
     </Reference>
-    <Reference Include="DiagramDesigner">
+    <Reference Include="DiagramDesigner, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\Users\Honor\Downloads\MVVMDiagramDesigner-master\MVVMDiagramDesigner-master\DiagramDesignerMVVM\DiagramDesigner\bin\Debug\DiagramDesigner.dll</HintPath>
+    </Reference>
+    <Reference Include="Persistence.Common">
+      <HintPath>..\Persistence.Common\bin\Debug\Persistence.Common.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -66,16 +72,15 @@
     <Compile Include="Services\Contracts\IUIVisualizerService.cs" />
     <Compile Include="Services\Implementation\WPFMessageBoxService.cs" />
     <Compile Include="Services\Implementation\WPFUIVisualizerService.cs" />
-    <Compile Include="UserControls\ToolBoxControl.xaml.cs">
-      <DependentUpon>ToolBoxControl.xaml</DependentUpon>
-    </Compile>
+    <Compile Include="UserControls\ToolBoxControl.xaml.cs" />
+    <Compile Include="ViewModels\GroupingDesignerItemViewModel.cs" />
     <Compile Include="ViewModels\ISupportDataChanges.cs" />
-    <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\PersistDesignerItemData.cs" />
     <Compile Include="ViewModels\PersistDesignerItemViewModel.cs" />
     <Compile Include="ViewModels\SettingsDesignerItemData.cs" />
     <Compile Include="ViewModels\SettingsDesignerItemViewModel.cs" />
     <Compile Include="ViewModels\ToolBoxViewModel.cs" />
+    <Compile Include="ViewModels\Window1ViewModel.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -88,12 +93,33 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="UserControls\ToolBoxControl.xaml">
-      <SubType>Designer</SubType>
+    <Page Include="Popups\PopupWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\DesignerItems\GroupingDesignerItemDataTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\DesignerItems\PersistDesignerItemDataTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\DesignerItems\SettingsDesignerItemDataTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Styles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\ToolBoxControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Popups\PopupWindow.xaml.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -119,5 +145,10 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Persist.png" />
+    <Resource Include="Images\Setting.png" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

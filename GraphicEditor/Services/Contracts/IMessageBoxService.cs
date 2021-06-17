@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace GraphicEditor.Services.Contracts
+
+namespace DemoApp
 {
     /// <summary>
     /// Available Button options. 
